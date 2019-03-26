@@ -16,6 +16,7 @@ namespace Acme.Biz
         #region Constructors
         public Product()
         {
+            createColorsArrays();
         }
         public Product(int productId,
                         string productName,
@@ -24,8 +25,23 @@ namespace Acme.Biz
             this.ProductId = productId;
             this.ProductName = productName;
             this.Description = description;
+            createColorsArrays();
         }
         #endregion
+        public void createColorsArrays()
+        {
+            var colorOptions = new string[4];
+            colorOptions[0] = "Red";
+            colorOptions[1] = "Espresso";
+            colorOptions[2] = "White";
+            colorOptions[3] = "Navy";
+        }
+
+        public void initArray()
+        {
+            string[] colorOptions = { "Red", "White", "Espresso", "Navy" };
+            Console.WriteLine(colorOptions[2]);
+        }
 
         #region Properties
         public DateTime? AvailabilityDate { get; set; }
