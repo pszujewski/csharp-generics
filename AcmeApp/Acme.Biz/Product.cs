@@ -18,6 +18,12 @@ namespace Acme.Biz
         {
             createColorsArrays();
             initArray();
+            var states = new Dictionary<string, string>()
+            {
+                {"CA", "California" },
+                {"WA", "Washington" },
+                {"NY", "New York" },
+            };
         }
         public Product(int productId,
                         string productName,
