@@ -54,7 +54,8 @@ namespace Acme.Biz.Tests
 
             var actual = repository.RetrieveWithKeys();
 
-            CollectionAssert.AreEqual(expected, actual);
+            CollectionAssert.Equals(expected["ABC Corp"], actual["ABC Corp"]);
+            CollectionAssert.Equals(expected["XYZ Inc"], actual["XYZ Inc"]);
         }
     }
 }

@@ -35,11 +35,22 @@ namespace Acme.Biz
             if (vendors == null)
             {
                 vendors = new List<Vendor>();
-                vendors.Add(new Vendor() { VendorId = 1, CompanyName = "ABC", Email = "me@ABC.com" });
+                vendors.Add(new Vendor() { VendorId = 5, CompanyName = "ABC Corp", Email = "abc@abc.com" });
+                vendors.Add(new Vendor() { VendorId = 8, CompanyName = "XYZ Inc", Email = "xyz@xyz.com" });
             }
 
             Console.WriteLine(vendors[0]);
             return vendors;
+        }
+
+        public Vendor[] RetrieveVendorsArray()
+        {
+            var vendorsArr = new Vendor[2]
+            {
+                new Vendor() { VendorId = 5, CompanyName = "ABC Corp", Email = "abc@abc.com" },
+                new Vendor() { VendorId = 8, CompanyName = "XYZ Inc", Email = "xyz@xyz.com" },
+            };
+            return vendorsArr;
         }
 
 
@@ -52,6 +63,18 @@ namespace Acme.Biz
                 { "XYZ Inc",
                     new Vendor() { VendorId = 8, CompanyName = "XYZ Inc", Email = "xyz@xyz.com" } },
             };
+
+            Vendor v;
+            if (vendorsDict.TryGetValue("XYZ Inc", out v))
+            {
+                Console.WriteLine(vendorsDict["XYZ Inc"]);
+            }
+
+            foreach (var companyName in vendorsDict.Keys)
+            {
+                Console.WriteLine(companyName);
+            }
+
             return vendorsDict;
         }
         
