@@ -70,7 +70,7 @@ namespace Acme.Biz
             return $"Vendor: {this.CompanyName} ({this.VendorId})";
         }
 
-        public static List<string> SendEmail(List<Vendor> vendors, string message)
+        public static List<string> SendEmail(ICollection<Vendor> vendors, string message)
         {
             var confirmations = new List<string>();
             var emailService = new EmailService();
